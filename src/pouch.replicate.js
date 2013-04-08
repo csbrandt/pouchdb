@@ -133,6 +133,8 @@ function replicate(src, target, opts, promise) {
       requests.notifyRequestComplete();
       writeQueue.push(doc);
       requests.enqueue(writeDocs);
+
+      opts.eachRev(err, doc);
     });
   }
 
